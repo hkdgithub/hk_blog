@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.how2java.springboot.dao.logMapper">
+    <resultMap id ="UserMap" type="com.how2java.springboot.domain.log">
+        <result column="Id" property="Id"/>
+        <result column="operation" property="operation"/>
+        <result column="operationTime" property="operationTime"/>
+    </resultMap>
+
+    <!--查询全部评论-->
+    <select id="queryAllLog" resultType= "com.how2java.springboot.domain.log">
+        select * from log
+    </select>
+    <!--添加评论-->
+    <insert id="addLog">
+        insert into log (operation ,operationTime) values (#{operation} ,#{operationTime})
+    </insert>
+    <!--删除日志-->
+    <delete id="deleteAllLog">
+        delete  from log
+    </delete>
+</mapper>

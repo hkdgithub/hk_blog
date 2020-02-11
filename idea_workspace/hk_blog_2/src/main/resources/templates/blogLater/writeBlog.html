@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>后台管理界面</title>
+    <link rel="stylesheet" href="../../static/css/blogLater/page.css" th:href="@{css/blogLater/page.css}" />
+    <script type="text/javascript" src="../../static/js/jquery/2.0.0/jquery.min.js" th:src="@{js/jquery/2.0.0/jquery.min.js}" ></script>
+    <script type="text/javascript" src="../../static/js/blogLater/index.js" th:src="@{js/blogLater/index.js}"></script>
+    <link href="../../static/css/bootstrap/3.3.6/bootstrap.min.css" th:href="@{css/bootstrap/3.3.6/bootstrap.min.css}" rel="stylesheet"/>
+    <script src="../../static/js/bootstrap/3.3.6/bootstrap.min.js" th:src="@{js/bootstrap/3.3.6/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="../../static/css/blogLater/writeBlog.css"  th:href="@{css/blogLater/writeBlog.css}"/>
+    <script src="../../static/js/blogLater/blogManage.js" th:src="@{js/blogLater/blogManage.js}"></script>
+    <script src="../../static/ckeditor/ckeditor.js" th:src="@{ckeditor/ckeditor.js}"></script>
+</head>
+
+<body>
+<div class="left">
+    <div class="bigTitle">博客后台界面</div>
+    <br/>
+    <div class="lines" style="font-size: 20px">
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-1.png}"  src="../../static/img/blogLater/icon-1.png" /><a th:href="@{'enterBlogManage'}"     href="adminMain.html"> 博客管理</a></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-2.png}"  src="../../static/img/blogLater/icon-2.png" /><a th:href="@{'enterWriteBlog'}"      href="writeBlog.html"> 撰写博客</a></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-3.png}"  src="../../static/img/blogLater/icon-3.png" /><a th:href="@{'enterCommentManage'}"  href="commentManage.html"> 评论管理</a> </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-4.png}"  src="../../static/img/blogLater/icon-4.png" /><a th:href="@{'enterCategoryManage'}" href="categoryManage.html">分类管理</a> </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-5.png}"  src="../../static/img/blogLater/icon-5.png" /><a th:href="@{'enterTagsManage'}"     href="tagsManage.html"> 标签管理</a></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-5.png}"  src="../../static/img/blogLater/icon-5.png" /><a th:href="@{'enterComment'}"        href="comment.html"> 网站评论</a></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-5.png}"  src="../../static/img/blogLater/icon-5.png" /><a th:href="@{'enterLogManage'}"        href="logManage.html"> 日志管理</a></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-5.png}"  src="../../static/img/blogLater/icon-5.png" /><a th:href="@{'enterIndex'}"       href="../blogBefore/blogMain.html">进入博客</a> </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img th:src="@{img/blogLater/icon-5.png}"  src="../../static/img/blogLater/icon-5.png" /><a th:href="@{/enterAdminLogin(exit='test')}"> 安全退出</a></div>
+    </div>
+</div>
+<div class="top">
+    <div class="leftTiyle" id="flTitle">撰写博客</div>
+    <div class="thisUser">当前用户：黄坤</div>
+</div>
+
+<div class="content" id="tb">
+    &nbsp;&nbsp;&nbsp;
+    <form action="/WriteBlog" method="post" enctype="multipart/form-data">
+   <h3 id="title1">标题:<input id="blogTitle" name="blogTitle" type="text" placeholder="给你的文章起一个好名字" size="30" class="text-primary"/></h3>
+    <br/>
+    <h4 id="title2">
+        分类，标签，预览图不可修改，请慎重填写
+        <br/>
+        <br/>
+
+        分类:<input  id="blogCategoryId" name="blogCategoryId" type="text" placeholder="自定义分类" class="text-primary"/>
+            &nbsp;&nbsp;
+        标签:<input  id="blogTagsId" name="blogTagsId" type="text" placeholder="自定义标签" class="text-primary"/>
+            &nbsp;&nbsp;
+        上传博客预览图：<input  id="blogCoverImage" name="file" type="file"   style="display: inline" >
+    </h4>
+    <br/>
+        <div style="margin-right: 50px;margin-left: 50px">
+    <h3 id="title3">博客内容:</h3>
+        <textarea  id="blogContent" name="editor01"></textarea>
+        <script>
+        CKEDITOR.replace('editor01');
+        </script>
+    <br/>
+        </div>
+    <br/>
+    <div style="text-align: center">
+    <input class="btn-info" type="submit" id="btn1" value="提交"  style="display: inline"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input class="btn-danger" type="reset"  id="btn2" value="全部删除" style="display: inline"/>
+        <br/>
+        <p th:text="${success}"></p>
+    </div>
+    </form>
+</div>
+
+</body>
+
+</html>

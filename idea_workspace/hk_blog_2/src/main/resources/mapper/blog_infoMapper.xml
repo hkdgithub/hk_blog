@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.how2java.springboot.dao.blogManageMapper">
+    <resultMap id ="UserMap" type="com.how2java.springboot.domain.blog_info">
+        <result column="blogId" property="blogId"/>
+        <result column="blogTitle" property="blogTitle"/>
+        <result column="blogCoverImage" property="blogCoverImage"/>
+        <result column="blogContent" property="blogContent"/>
+        <result column="blogCategoryId" property="blogCategoryId"/>
+        <result column="blogTagsId" property="blogTagsId"/>
+        <result column="blogState" property="blogState"/>
+        <result column="blogReadNumber" property="blogReadNumber"/>
+        <result column="createTime" property="createTime"/>
+        <result column="issueTime" property="issueTime"/>
+    </resultMap>
+    <!--查询全部-->
+    <select id="queryAllBlog" resultType= "com.how2java.springboot.domain.blog_info">
+        select * from blog_info
+    </select>
+    <!--查询单个(根据博客id)-->
+    <select id="querySingleBlog" parameterType="java.lang.String" resultType="com.how2java.springboot.domain.blog_info">
+        select * from blog_Info where blogId=#{blogId}
+    </select>
+    <!--查询单个（根据blogTitle）-->
+    <select id="queryBlogForTitle" parameterType="java.lang.String" resultType="com.how2java.springboot.domain.blog_info">
+        select * from blog_info where blogTitle=#{blogTitle}
+    </select>
+    <!--按降排序排列博客阅读前5个-->
+    <select id="queryDescReadNumber" resultType="com.how2java.springboot.domain.blog_info">
+        select * from blog_info  order by blogReadNumber desc limit 5
+    </select>
+    <!--添加博客-->
+    <insert id="add" parameterType="java.lang.String">
+        insert into blog_Info (blogTitle ,blogCoverImage ,blogContent ,blogCategoryId ,blogTagsId ,blogState ,createTime ,issueTime) values
+        (#{blogTitle} ,#{blogCoverImage},#{blogContent} ,#{blogCategoryId} ,#{blogTagsId} ,#{blogState},#{createTime},#{issueTime})
+    </insert>
+    <!--修改博客状态-->
+    <update id="updateBlogState" parameterType="java.lang.String">
+        update blog_Info set blogState=#{blogState},issueTime=#{issueTime} where blogId=#{blogId}
+    </update>
+    <!--修改博客访问量-->
+    <update id="updateBlogReadNumber" parameterType="java.lang.String">
+        update blog_info set blogReadNumber=blogReadNumber+1 where blogTitle=#{blogTitle}
+    </update>
+    <!--删除博客-->
+    <delete id="deleteBlog" parameterType="java.lang.Integer">
+        delete from blog_info where blogId=#{blogId}
+    </delete>
+    <!--修改博客-->
+    <update id="updateBlog" parameterType="java.lang.String">
+        update blog_info set blogContent=#{blogContent}
+        where blogTitle=#{blogTitle}
+    </update>
+    
+</mapper>

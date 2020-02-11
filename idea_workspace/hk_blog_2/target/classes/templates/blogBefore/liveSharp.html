@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>生活分享</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="keywords" content="个人博客,黄坤个人博客,个人博客系统,黄坤博客,黄坤">
+    <meta name="description" content="黄坤博客系统，一个站在java开发之路上的草根程序员个人博客网站。">
+    <LINK rel="Bookmark" href="favicon.ico" >
+    <LINK rel="Shortcut Icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/staticRes/js/html5shiv.js"></script>
+    <script type="text/javascript" src="/staticRes/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="../../static/plugin/h-ui/css/H-ui.min.css" th:href="@{plugin/h-ui/css/H-ui.min.css}" />
+    <link rel="stylesheet" type="text/css" href="../../static/plugin/Hui-iconfont/1.0.8/iconfont.min.css" th:href="@{plugin/Hui-iconfont/1.0.8/iconfont.min.css}" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/blogBefore/common.css" th:href="@{css/blogBefore/common.css}" />
+    <link rel="stylesheet" type="text/css" href="../../static/plugin/pifu/pifu.css" th:href="@{plugin/pifu/pifu.css}" />
+    <!--[if lt IE 9]>
+    <link href="/staticRes/lib/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } function showSide(){$('.navbar-nav').toggle();}</script>
+</head>
+<body>
+<header class="navbar-wrapper">
+    <div class="navbar navbar-fixed-top">
+        <div class="container cl">
+            <a class="navbar-logo hidden-xs" href="index.html" th:href="@{'enterIndex'}">
+                <img class="logo" src="../../static/img/blogBefore/logo.png" th:src="@{img/blogBefore/logo.png}" alt="黄坤博客" />
+            </a>
+            <a class="logo navbar-logo-m visible-xs" href="index.html" th:href="@{'enterIndex'}">黄坤博客</a>
+            <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:void(0);" onclick="showSide();">&#xe667;</a>
+            <nav class="nav navbar-nav nav-collapse w_menu" role="navigation">
+                <ul class="cl">
+                    <li class="active"> <a href="index.html" th:href="@{'enterIndex'}" data-hover="首页">首页</a> </li>
+                    <li> <a href="mood.html" th:href="@{'enterMood'}" data-hover="开发历程">开发历程</a> </li>
+                    <li> <a href="board.html" th:href="@{'enterBoard'}" data-hover="留言板">留言板</a> </li>
+                    <li> <a href="about.html" th:href="@{'enterAbout'}" data-hover="关于我">关于我</a> </li>
+                    <li> <a href="liveSharp.html" th:href="@{'enterliveSharp'}" data-hover="生活分享">生活分享</a></li>
+                    <li> <a href="../userLogin.html" th:href="@{/enterUserLogin(exit='test')}" data-hover="退出">退出</a> </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+<!--导航条-->
+<nav class="breadcrumb">
+    <div class="container"><i class="Hui-iconfont">&#xe67f;</i>
+        <a href="index.html" th:href="@{'enterIndex'}" class="c-primary">首页</a> <span class="c-gray en">&gt;
+	</span> <span class="c-gray">生活分享</span></div>
+</nav>
+<section>
+
+    <div style="margin-left: 100px;margin-top: 50px;margin-right: 100px">
+        <div class="well">
+            <Fieldset   style="border:5px   solid   burlywood;padding:10px;">
+                <legend   style="padding:10px">学习感想</legend>
+                <a href="../../static/word/第一次开发项目感想.docx" th:href="@{word/第一次开发项目感想.docx}" style="margin-right: 25px;">
+                    <button  class="btn btn-primary">第一次开发项目感想</button>
+                </a>
+                <a href="../../static/word/大三上学期总结.doc" th:href="@{word/大三上学期总结.doc}" style="margin-right: 25px;">
+                    <button type="button" class="btn btn-primary">大三上学期学习总结</button>
+                </a>
+                <a href="../../static/word/个人博客项目总结.docx" th:href="@{word/个人博客项目总结.docx}" style="margin-right: 25px;">
+                    <button type="button" class="btn btn-primary">个人博客项目总结</button>
+                </a>
+            </Fieldset>
+        </div>
+    </div>
+    <div style="margin-left: 100px;margin-top: 50px;margin-right: 100px">
+        <div class="well">
+            <Fieldset   style="border:5px   solid   burlywood;padding:10px;">
+                <legend   style="padding:10px">考试分享</legend>
+                <a href="../../static/word/计算机三级考试内容.pdf" th:href="@{word/计算机三级考试内容.pdf}" style="margin-right: 25px;">
+                    <button  class="btn btn-primary">计算机三级考试内容.pdf</button>
+                </a>
+                <a href="../../static/word/计算机四级考试范围.pdf" th:href="@{word/计算机四级考试范围.pdf}" style="margin-right:25px;">
+                    <button type="button" class="btn btn-primary">计算机四级考试范围.pdf</button>
+                </a>
+                <a href="../../static/word/长沙理工大学2019年全日制和非全日制硕士研究生招生简章.pdf" th:href="@{word/长沙理工大学2019年全日制和非全日制硕士研究生招生简章.pdf}" style="margin-right: 25px;">
+                    <button type="button" class="btn btn-primary">长沙理工大学2019年全日制和非全日制硕士研究生招生简章.pdf</button>
+                </a>
+            </Fieldset>
+        </div>
+    </div>
+    <div style="margin-left: 100px;margin-top: 50px;margin-right: 100px">
+        <div class="well">
+            <Fieldset   style="border:5px   solid   burlywood;padding:10px;">
+                <legend   style="padding:10px">书籍分享</legend>
+                <a href="../../static/word/Ajax中文手册(快速上手).chm" th:href="@{word/Ajax中文手册(快速上手).chm}" style="margin-right: 25px;">
+                    <button  class="btn btn-primary">Ajax中文手册(快速上手).chm</button>
+                </a>
+                <a href="../../static/word/Servlet3.1规范（最终版）.pdf" th:href="@{word/Servlet3.1规范（最终版）.pdf}" style="margin-right: 25px;">
+                    <button type="button" class="btn btn-primary">Servlet3.1规范（最终版）.pdf</button>
+                </a>
+                <a href="../../static/word/struts中文手册.pdf" th:href="@{word/struts中文手册.pdf}" style="margin-right: 25px;">
+                    <button type="button" class="btn btn-primary">struts中文手册.pdf</button>
+                </a>
+                <a href="../../static/word/Java编辑思想（第四版）pdf" th:href="@{word/Java编辑思想（第四版）pdf}" style="margin-right: 25px;">
+                    <button type="button" class="btn btn-primary">Java编辑思想（第四版）pdf</button>
+                </a>
+            </Fieldset>
+        </div>
+    </div>
+    <div style="margin-left: 100px;margin-top: 50px;margin-right: 100px">
+        <div class="well">
+            <Fieldset   style="border:5px   solid   burlywood;padding:10px;margin-top: 30px;">
+                <legend   style="padding:10px">文章分享</legend>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/103721202"  style="margin-right: 25px;margin-top: 30px;">
+                    <button  class="btn btn-primary">java验证码（算术型和字符型）和生成和解析——生成篇</button>
+                </a>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/103722615"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">java验证码（算术型和字符型）和生成和解析——解析篇</button>
+                </a>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/103849988"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">springboot发送邮件</button>
+                </a>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/104028471"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">springboot上传与回显图片</button>
+                </a><br/><br/>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/104061592"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">IDEA更换默认浏览器</button>
+                </a>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/104106197"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">怎样做出一个富文本框的样子</button>
+                </a>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/104042331"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">springboot使用pagehelper进行分页</button>
+                </a>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/104114783"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">自定义启动时的“spring"图标</button>
+                </a><br/><br/>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/103445578"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">springboot不能显示application.porperties的绿叶图标和没有提示信息</button>
+                </a>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/104210002"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">表格中的一列是按钮，点击按钮弹出bootstarp拟态框，拟态框的标签获得按钮所在行的值</button>
+                </a>
+                <br/>
+                <a href="https://blog.csdn.net/m0_45025658/article/details/104181314"  style="margin-right: 25px;margin-top: 30px;">
+                    <button type="button" class="btn btn-primary">springboot使用拦截器</button>
+                </a>
+            </Fieldset>
+        </div>
+    </div>
+</section>
+
+<footer class="footer mt-20" style="background: grey;">
+    <div class="container-fluid" id="foot" style="color: white;font-size: 15px;font-family: 楷体">
+        <p>Copyright &copy; 2016-2017 www.wfyvv.com
+            <br/>
+            <br/>
+            皖ICP备17002922号
+        </p>
+    </div>
+</footer>
+<script type="text/javascript" src="../../static/plugin/jquery/1.9.1/jquery.min.js" th:src="@{plugin/jquery/1.9.1/jquery.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/layer/3.0/layer.js" th:src="@{plugin/layer/3.0/layer.js}"></script>
+<script type="text/javascript" src="../../static/plugin/h-ui/js/H-ui.min.js" th:src="@{plugin/h-ui/js/H-ui.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/pifu/pifu.js" th:src="@{plugin/pifu/pifu.js}"></script>
+<script type="text/javascript" src="../../static/js/blogBefore/common.js" th:src="@{js/blogBefore/common.js}"></script>
+<script> $(function(){ $(window).on("scroll",backToTopFun); backToTopFun(); }); </script>
+<script type="text/javascript" src="../../static/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js" th:src="@{plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js}"></script>
+
+<script>
+    $(function(){
+//幻灯片
+        jQuery(".slider_main .slider").slide({mainCell: ".bd ul", titCell: ".hd li", trigger: "mouseover", effect: "leftLoop", autoPlay: true, delayTime: 700, interTime: 2000, pnLoop: true, titOnClassName: "active"})
+//tips
+        jQuery(".slideTxtBox").slide({titCell: ".hd ul", mainCell: ".bd ul", autoPage: true, effect: "top", autoPlay: true});
+//标签
+        $(".tags a").each(function(){
+            var x = 9;
+            var y = 0;
+            var rand = parseInt(Math.random() * (x - y + 1) + y);
+            $(this).addClass("tags"+rand)
+        });
+
+        $("img.lazyload").lazyload({failurelimit : 3});
+    });
+
+</script>
+
+</body>
+</html>

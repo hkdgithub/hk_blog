@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>文章内容</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="个人博客,黄坤个人博客,个人博客系统,黄坤博客,黄坤">
+	<meta name="description" content="黄坤博客系统，一个站在java开发之路上的草根程序员个人博客网站。">
+<LINK rel="Bookmark" href="favicon.ico" >
+<LINK rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/staticRes/js/html5shiv.js"></script>
+<script type="text/javascript" src="/staticRes/js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/plugin/h-ui/css/H-ui.min.css" th:href="@{plugin/h-ui/css/H-ui.min.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/plugin/Hui-iconfont/1.0.8/iconfont.min.css" th:href="@{plugin/Hui-iconfont/1.0.8/iconfont.min.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/css/blogBefore/common.css" th:href="@{css/blogBefore/common.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/plugin/pifu/pifu.css" th:href="@{plugin/pifu/pifu.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/plugin/wangEditor/css/wangEditor.min.css" th:href="@{plugin/wangEditor/css/wangEditor.min.css}">
+	<link rel="stylesheet" href="../../static/css/blogLater/page.css" th:href="@{css/blogLater/page.css}" />
+	<script type="text/javascript" src="../../static/js/jquery/2.0.0/jquery.min.js" th:src="@{js/jquery/2.0.0/jquery.min.js}" ></script>
+	<script type="text/javascript" src="../../static/js/blogLater/index.js" th:src="@{js/blogLater/index.js}"></script>
+	<link href="../../static/css/bootstrap/3.3.6/bootstrap.min.css" th:href="@{css/bootstrap/3.3.6/bootstrap.min.css}" rel="stylesheet"/>
+	<script src="../../static/js/bootstrap/3.3.6/bootstrap.min.js" th:src="@{js/bootstrap/3.3.6/bootstrap.min.js}"></script>
+	<link rel="stylesheet" href="../../static/css/blogLater/writeBlog.css"  th:href="@{css/blogLater/writeBlog.css}"/>
+	<script src="../../static/js/blogLater/blogManage.js" th:src="@{js/blogLater/blogManage.js}"></script>
+	<script src="../../static/ckeditor/ckeditor.js" th:src="@{ckeditor/ckeditor.js}"></script>
+	<!--[if lt IE 9]>
+<link href="/staticRes/lib/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } function showSide(){$('.navbar-nav').toggle();}</script>
+</head>
+<body>
+<header class="navbar-wrapper">
+    <div class="navbar navbar-fixed-top">
+        <div class="container cl">
+            <a class="navbar-logo hidden-xs" href="index.html">
+                <img class="logo" src="../../static/img/blogBefore/logo.png" th:src="@{img/blogBefore/logo.png}" alt="Lao王博客" />
+            </a>
+            <a class="logo navbar-logo-m visible-xs" href="index.html">黄坤博客</a>
+            <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:void(0);" onclick="showSide();">&#xe667;</a>
+            <nav class="nav navbar-nav nav-collapse w_menu" role="navigation">
+				<ul class="cl">
+					<li class="active"> <a href="index.html" th:href="@{'enterIndex'}" data-hover="首页">首页</a> </li>
+					<li> <a href="mood.html" th:href="@{'enterMood'}" data-hover="开发历程">开发历程</a> </li>
+					<li> <a href="board.html" th:href="@{'enterBoard'}" data-hover="留言板">留言板</a> </li>
+					<li> <a href="about.html" th:href="@{'enterAbout'}" data-hover="关于我">关于我</a> </li>
+					<li> <a href="liveSharp.html" th:href="@{'enterliveSharp'}" data-hover="生活分享">生活分享</a></li>
+					<li> <a href="../userLogin.html" th:href="@{/enterUserLogin(exit='test')}" data-hover="退出">退出</a> </li>
+				</ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!--导航条-->
+<nav class="breadcrumb">
+  <div class="container"> <i class="Hui-iconfont">&#xe67f;</i>
+	  <a href="index.html" th:href="@{'enterIndex'}" class="c-primary">首页</a> <span class="c-gray en">&gt;
+	  </span>  <span class="c-gray">文章</span> <span class="c-gray en"></span>
+  </div>
+</nav>
+
+<section class="container pt-20">
+	
+	<div class="row w_main_row">
+				
+				
+				<div class="col-lg-9 col-md-9 w_main_left">
+					<div class="panel panel-default  mb-20">
+						<div class="tab-category">
+							<a href=""><strong>博客内容</strong></a>
+						</div>
+						<div style="text-align: center;width: 100%;height: 10%;font-size: 30px;font-family: 黑体">
+							<strong>
+								<span th:utext="${c.blogTitle}"></span>
+							</strong>
+						</div>
+						<div style="text-align: center;font-size: 15px;font-family: 楷体;margin-top: 10px">
+							作者：黄坤<br/>
+						</div>
+						<div style="margin-top: 20px;font-family: 楷体;font-size: 15px;text-align: center">
+							标签：<span th:utext="${c.blogTagsId}"></span>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+							分类:<span th:utext="${c.blogCategoryId}"></span>
+						</div>
+						<div style="margin-top: 30px;margin-left: 50px;margin-right: 50px">
+							<p th:utext="${c.blogContent}"></p>
+						</div>
+
+					</div>
+					
+					<div class="panel panel-default  mb-20">
+						<div class="tab-category">
+                				<a href=""><strong>添加评论</strong></a>
+            			</div>
+						<div class="panel-body">
+							<div class="panel-body" style="margin: 0 3%;">
+                    <div class="mb-20">
+						<form th:action="@{/addBlogComment}" method="post"   onsubmit="return addBlogCommentInfo()">
+						<input  style="display: none" th:value="${c.blogTitle}" name="blogTitle" type="text"/>
+						<input id="name" name="name" type="text" placeholder="(必填)请输入昵称" class="form-control">
+					    <br/>
+						<input id="sex" name="sex" type="text" placeholder="(必填)请输入性别" class="form-control">
+						<br/>
+						<input id="email" name="email" type="text" placeholder="(必填)请输入邮箱" class="form-control">
+						<br/>
+
+							<p th:text="${error}"></p>
+                    <!--用于评论-->
+                    <div class="mt-20" id="ct">
+                        <div id="err" class="Huialert Huialert-danger hidden radius">成功状态提示</div>
+                        <textarea id="textarea1" name="content" style="height:200px;" placeholder="看完不留一发？"> </textarea>
+                        <div class="text-r mt-10">
+                            <input value="发表评论" type="submit" class="btn btn-primary radius" />
+                        </div>
+                    </div>
+						</form>
+                </div>
+						</div>
+							<div class="panel panel-default  mb-20">
+								<div class="tab-category">
+									<a href=""><strong>评论展示</strong></a>
+								</div>
+								<ul class="commentList mt-50">
+
+									<table>
+										<tr th:each="d:${d}">
+											<li class="item cl"> <a href="#"><i class="avatar size-L radius"><img alt="" src="http://qzapp.qlogo.cn/qzapp/101388738/1CF8425D24660DB8C3EBB76C03D95F35/100"></i></a>
+												<div class="comment-main">
+													<header class="comment-header">
+														<div class="comment-meta">
+															<a class="comment-author" href="#">
+																<span th:text="${d.blogCommentPeoperName}"></span>
+															</a>
+															<span  class="f-r" th:text="${d.blogCommentTime}"></span>
+														</div>
+													</header>
+													<div class="comment-body">
+														<span th:utext="${d.blogCommentContent}"></span>
+													</div>
+												</div>
+											</li>
+										</tr>
+									</table>
+								</ul>
+					</div>
+				</div>
+	
+</section>
+<footer class="footer mt-20" style="background: grey;">
+	<div class="container-fluid" id="foot" style="color: white;font-size: 15px;font-family: 楷体">
+		<p>Copyright &copy; 2016-2017 www.wfyvv.com
+			<br/>
+			<br/>
+			皖ICP备17002922号
+		</p>
+	</div>
+</footer>
+<script type="text/javascript" src="../../static/plugin/jquery/1.9.1/jquery.min.js" th:src="@{plugin/jquery/1.9.1/jquery.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/layer/3.0/layer.js" th:src="@{plugin/layer/3.0/layer.js}"></script>
+<script type="text/javascript" src="../../static/plugin/h-ui/js/H-ui.min.js" th:src="@{plugin/h-ui/js/H-ui.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/pifu/pifu.js" th:src="@{plugin/pifu/pifu.js}"></script>
+<script type="text/javascript" src="../../static/js/blogBefore/common.js" th:src="@{js/blogBefore/common.js}"></script>
+<script> $(function(){ $(window).on("scroll",backToTopFun); backToTopFun(); }); </script>
+<script type="text/javascript" src="../../static/plugin/wangEditor/js/wangEditor.min.js" th:src="@{plugin/wangEditor/js/wangEditor.min.js}"></script>
+<script type="text/javascript">
+    $(function () {
+    		$("img.lazyload").lazyload({failurelimit : 3});
+    	
+        wangEditor.config.printLog = false;
+        var editor1 = new wangEditor('textarea1');
+        editor1.config.menus = ['insertcode', 'quote', 'bold', '|', 'img', 'emotion', '|', 'undo', 'fullscreen'];
+        editor1.config.emotions = { 'default': { title: '老王表情', data: 'plugin/wangEditor/emotions1.data'}, 'default2': { title: '老王心情', data: 'plugin/wangEditor/emotions3.data'}, 'default3': { title: '顶一顶', data: 'plugin/wangEditor/emotions2.data'}};
+        editor1.create();
+
+        //show reply
+        $(".hf").click(function () {
+            pId = $(this).attr("name");
+            $(this).parents(".commentList").find(".cancelReply").trigger("click");
+            $(this).parent(".comment-body").append($(".comment").clone(true));
+            $(this).parent(".comment-body").find(".comment").removeClass("hidden");
+            $(this).hide();
+        });
+        //cancel reply
+        $(".cancelReply").on('click',function () {
+            $(this).parents(".comment-body").find(".hf").show();
+            $(this).parents(".comment-body").find(".comment").remove();
+        });
+    });
+</script>
+</body>
+</html>

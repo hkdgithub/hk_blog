@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.how2java.springboot.dao.commentMapper">
+    <!--查询全部评论-->
+    <select id="queryAllComment" resultType= "com.how2java.springboot.domain.comment">
+        select * from comment
+    </select>
+    <!--添加评论-->
+    <insert id="addComment">
+        insert into comment (content ,commentTime ,commentPeoper ,replyPeoper ,replyComment ,replyTime ,replyState)
+        values (#{content} ,#{commentTime} ,#{commentPeoper} ,#{replyPeoper} ,#{replyComment} ,#{replyTime} ,#{replyState})
+    </insert>
+    <!--添加回复-->
+    <update id="addReply">
+        update  comment set replyPeoper=#{replyPeoper} ,replyTime=#{replyTime} ,replyComment=#{replyComment} ,replyState=#{replyState} where Id=#{Id}
+    </update>
+    <!--删除(根据标签)-->
+    <delete id="deleteComment">
+        delete from comment where Id=#{Id}
+    </delete>
+
+</mapper>

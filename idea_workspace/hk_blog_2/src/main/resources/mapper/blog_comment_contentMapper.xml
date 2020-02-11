@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.how2java.springboot.dao.blogCommentContentMapper">
+    <resultMap id ="UserMap" type="com.how2java.springboot.domain.blog_comment_content">
+        <result column="blogTitle" property="blogTitle"/>
+        <result column="blogCommentPeoperName" property="blogCommentPeoperName"/>
+        <result column="blogCommentPeoperSex" property="blogCommentPeoperSex"/>
+        <result column="blogCommentPeoperEmail" property="blogCommentPeoperEmail"/>
+        <result column="blogCommentContent" property="blogCommentContent"/>
+        <result column="blogCommentTime" property="blogCommentTime"/>
+    </resultMap>
+    <!--查询全部-->
+    <select id="queryAllBlogComment" resultType= "com.how2java.springboot.domain.blog_comment_content">
+        select * from blog_comment_content
+    </select>
+    <!--添加博客评论-->
+    <insert id="addBlogComment" parameterType="java.lang.String">
+        insert into blog_comment_content values (#{blogTitle} ,#{blogCommentPeoperName} ,#{blogCommentPeoperSex} ,
+        #{blogCommentPeoperEmail} ,#{blogCommentContent} ,#{blogCommentTime})
+    </insert>
+    <!--查询（根据blogTitle）-->
+    <select id="queryBlogCommentForTitle" parameterType="java.lang.String" resultType="com.how2java.springboot.domain.blog_comment_content">
+        select * from blog_comment_content where blogTitle=#{blogTitle} ;
+    </select>
+    <!--删除-->
+    <delete id="deleteBlogComment" parameterType="java.lang.String">
+        delete from blog_comment_content where blogCommentTime=#{blogCommentTime}
+    </delete>
+
+</mapper>

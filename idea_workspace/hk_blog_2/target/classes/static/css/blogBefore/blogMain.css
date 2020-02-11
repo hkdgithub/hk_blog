@@ -1,0 +1,91 @@
+#top{
+    width: 100%;
+    height: 20%;
+    background: #b2dba1;
+    text-align: right;
+    font-family: 华文琥珀;
+    margin-right: 20px;
+}
+
+
+#right1{
+    background: skyblue;
+    width: 20%;
+    height: 400px;
+    float: right;
+}
+#left1{
+     background: peachpuff;
+     width: 20%;
+     height: 800px;
+     float: right;
+ }
+#middle1{
+     background: white;
+     width: 60%;
+     height: 600px;
+    float: right;
+ }
+#title{
+    font-family: 楷体;
+    height: 80px;
+    text-align: center;
+    background-color: #b2dba1
+}
+div.item img{
+    width:100%;
+}
+div#carousel-example-generic{
+    width:30%;
+    margin:0 auto;
+}
+#search1{
+    font-family: 楷体;
+    margin-left: 10px;
+}
+#tag1{
+    font-family: 楷体;
+    margin-left: 10px;
+}
+#tag2{
+    font-family: 楷体;
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+#new1{
+    font-family: 楷体;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#new2{
+    font-family: 楷体;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+#click{
+    font-family: 楷体;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#click1{
+    font-family: 楷体;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+#body2{
+    text-align: center;
+    font-family: 楷体;
+    margin-top: 10px;
+}
+/**底部**/
+/**#footer{
+    width: 100%;
+    height: 10%;
+    background: slategray;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+}**/

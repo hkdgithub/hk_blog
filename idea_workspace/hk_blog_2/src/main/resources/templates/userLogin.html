@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>普通用户登陆界面</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/registerAndLogin/normalize.css}" href="../static/css/registerAndLogin/normalize.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{css/registerAndLogin/demo.css}" href="../static/css/registerAndLogin/demo.css" />
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" th:href="@{css/registerAndLogin/component.css}" href="../static/css/registerAndLogin/component.css" />
+    <!--[if IE]>
+    <script th:src="@{js/userLoginAndRegister/html5.js}" href="../static/js/userLoginAndRegister/html5.js"/>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container demo-1">
+    <div class="content">
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
+            <div class="logo_box">
+                <h2 style="font-family: 楷体;text-align: center ">欢迎来到黄坤的个人博客</h2>
+                <form action="/UserLogin" name="f" method="get" onsubmit="return infoSubmit()">
+                    <div class="input_outer">
+                        <span class="u_user"></span>
+                        <input id="logname" name="logname" class="text" style="color: #FFFFFF !important;display: inline" type="text" placeholder="请输入账户"/>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<p id="lognameVerify" style="display: inline" th:text="${message}"></p>
+                    </div>
+                    <div class="input_outer">
+                        <span class="us_uer"></span>
+                        <input  id="logpass" name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;display: inline" type="password" placeholder="请输入密码"/>
+                    </div>
+                    <nobr>
+                    <div class="mb2"><input class="act-but submit" value="登录" type="submit" style="color: #FFFFFF;width: 335px; font-family: 楷体" /></div>
+                    <div class="mb2"><a th:href="@{'/enterUserRegister'}" class="act-but submit" style="color: #FFFFFF;width: 335px; font-family: 楷体">注册</a></div>
+                    </nobr>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->
+<script th:src="@{js/userLoginAndRegister/TweenLite.min.js}" src="../static/js/userLoginAndRegister/TweenLite.min.js"></script>
+<script th:src="@{js/userLoginAndRegister/EasePack.min.js}" src="../static/js/userLoginAndRegister/EasePack.min.js"></script>
+<script th:src="@{js/userLoginAndRegister/rAF.js}" src="../static/js/userLoginAndRegister/rAF.js"></script>
+<script th:src="@{js/userLoginAndRegister/demo-1.js}" src="../static/js/userLoginAndRegister/demo-1.js"></script>
+<script th:src="@{js/userLoginAndRegister/formatVerify.js}" src="../static/js/userLoginAndRegister/formatVerify.js"></script>
+<div style="text-align:center;">
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#tb{
+    font-size: 15px;
+    vertical-align: middle;
+    text-align: center;
+}
+#title1,#title2,#title3,#btn1,#btn2{
+    font-family: 楷体;
+}
+#blogContent{
+    vertical-align: top ;
+    outline: none;
+    text-align: left;
+}

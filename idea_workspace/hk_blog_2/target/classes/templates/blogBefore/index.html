@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="keywords" content="个人博客,黄坤个人博客,个人博客系统,黄坤博客,黄坤">
+	<meta name="description" content="黄坤博客系统，一个站在java开发之路上的草根程序员个人博客网站。">
+<LINK rel="Bookmark" href="favicon.ico" >
+<LINK rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/staticRes/js/html5shiv.js"></script>
+<script type="text/javascript" src="/staticRes/js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/plugin/h-ui/css/H-ui.min.css" th:href="@{plugin/h-ui/css/H-ui.min.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/plugin/Hui-iconfont/1.0.8/iconfont.min.css" th:href="@{plugin/Hui-iconfont/1.0.8/iconfont.min.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/css/blogBefore/common.css" th:href="@{css/blogBefore/common.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/plugin/pifu/pifu.css" th:href="@{plugin/pifu/pifu.css}" />
+
+    <!--[if lt IE 9]>
+<link href="/staticRes/lib/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } function showSide(){$('.navbar-nav').toggle();}</script>
+</head>
+<body>
+<header class="navbar-wrapper">
+    <div class="navbar navbar-fixed-top">
+        <div class="container cl">
+            <a class="navbar-logo hidden-xs" href="index.html" th:href="@{'enterIndex'}">
+                <img class="logo" src="../../static/img/blogBefore/logo.png" th:src="@{img/blogBefore/logo.png}" alt="黄坤博客" />
+            </a>
+            <a class="logo navbar-logo-m visible-xs" href="index.html" th:href="@{'enterIndex'}">黄坤博客</a>
+            <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:void(0);" onclick="showSide();">&#xe667;</a>
+            <nav class="nav navbar-nav nav-collapse w_menu" role="navigation">
+                <ul class="cl">
+                    <li class="active"> <a href="index.html" th:href="@{'enterIndex'}" data-hover="首页">首页</a> </li>
+                    <li> <a href="mood.html" th:href="@{'enterMood'}" data-hover="开发历程">开发历程</a> </li>
+                    <li> <a href="board.html" th:href="@{'enterBoard'}" data-hover="留言板">留言板</a> </li>
+					<li> <a href="about.html" th:href="@{'enterAbout'}" data-hover="关于我">关于我</a> </li>
+					<li> <a href="liveSharp.html" th:href="@{'enterliveSharp'}" data-hover="生活分享">生活分享</a></li>
+                    <li> <a href="../userLogin.html" th:href="@{/enterUserLogin(exit='test')}" data-hover="退出">退出</a> </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<section class="container pt-20">
+	<!--<div class="Huialert Huialert-info"><i class="Hui-iconfont">&#xe6a6;</i>成功状态提示</div>-->
+  <!--left-->
+  <div class="col-sm-9 col-md-9">
+  	<!--滚动图-->
+  	<div class="slider_main">
+            <div class="slider">
+                <div class="bd">
+                    <ul>
+                        <li><a href="#" target="_blank"><img src="../../static/img/blogBefore/temp/banner2.png" th:src="@{img/blogBefore/temp/banner2.png}"></a></li>
+                        <li><a href="#" target="_blank"><img src="../../static/img/blogBefore/temp/banner3.jpg" th:src="@{img/blogBefore/temp/banner3.jpg}"></a></li>
+                    </ul>
+                </div>
+                <ol class="hd cl dots">
+                    <li>1</li>
+                    <li>2</li>
+                </ol>
+                <a class="slider-arrow prev" href="javascript:void(0)" th:href="@{javascript:void(0)}"></a>
+                <a class="slider-arrow next" href="javascript:void(0)" th:href="@{javascript:void(0)}"></a>
+            </div>
+        </div>
+  		
+		<div class="mt-20 bg-fff box-shadow radius mb-5">
+			<div class="tab-category">
+				<a href=""><strong class="current">博客列表</strong></a>
+			</div>
+		</div>
+
+		<div class="art_content">
+			<ul class="index_arc">
+				<table>
+				<tr th:each="c:${list}">
+		<li class="index_arc_item">
+					<a th:href="@{'enterArticleDetail'}" class="pic">
+						<img class="lazyload" data-original="../../static/temp/art.jpg" th:src="'img/blogManage/'+${c.blogCoverImage}" alt="应该选" />
+					</a>
+					<h4 class="title">
+                        <a th:href="@{/enterArticleDetail(blogTitle=${c.blogTitle})}">
+                        <strong th:text="${c.blogTitle}"></strong>
+                        </a>
+                    </h4>
+					<div class="date_hits">
+						作者：<span>黄坤</span>
+						<span th:text="${c.issueTime}">2017-02-24</span>
+
+						<p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i>
+                            <span th:text="${c.blogReadNumber}">15</span>
+                        </p>
+
+					</div>
+					<div class="desc" >
+                        分类：<span th:text="${c.blogCategoryId}">生活分享</span>
+                        <br/>
+                        标签：<span th:text="${c.blogTagsId}">学习分享</span>
+					</div>
+		</li>
+
+				</tr>
+				</table>
+				</ul>
+            </div>
+
+      <button  style="text-align: center"  style="width: 70px;height: 30px;font-size: 18px">
+      <a th:href="@{/enterIndex(start=1)}">首页</a>
+      </button>
+      &nbsp;&nbsp;&nbsp;
+      <button  style="text-align: center" value="" style="width: 90px;height: 30px;font-size: 18px">
+          <a th:href="@{/enterIndex(start=${page.getPageNum()-1})}">上一页</a>
+      </button>
+      &nbsp;&nbsp;&nbsp;
+
+      &nbsp;&nbsp;&nbsp;
+      <button style="text-align: center" value="" style="width: 90px;height: 30px;font-size: 18px">
+          <a th:href="@{/enterIndex(start=${page.getPageNum()+1})}">下一页</a>
+      </button>
+      &nbsp;&nbsp;&nbsp;
+      <button style="text-align: center" value="" style="width: 70px;height: 30px;font-size: 18px">
+          <a th:href="@{/enterIndex(start=${page.getPages()})}">尾页</a>
+      </button>
+      <br/>
+      <br/>
+
+      <span style="font-size: 15px;text-align: center" >显示第一到最后一条，共
+            <sapn th:text="${page.getPages()}" style=""></sapn>页,当前第
+            <span th:text="${page.getPageNum()}"></span>页
+            </span>
+		</div>
+  </div>
+
+  <!--right-->
+  <div class="col-sm-3 col-md-3">
+  	
+  	<!--站点声明-->
+        <div class="panel panel-default mb-20">
+            <div class="panel-body">
+                <i class="Hui-iconfont" style="float: left;">&#xe62f;&nbsp;</i>
+                <div class="slideTxtBox">
+                    <div class="bd">
+                        <ul>
+                            <li><a href="javascript:void(0);">黄坤博客测试版上线，欢迎访问</a></li>
+                            <li><a href="javascript:void(0);">内容如有侵犯，请立即联系管理员删除</a></li>
+                            <li><a href="javascript:void(0);">本站内容仅供学习和参阅，不做任何商业用途</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+  	<!--博主信息-->
+        <div class="bg-fff box-shadow radius mb-20">
+            <div class="tab-category">
+                <a href=""><strong>博主信息</strong></a>
+            </div>
+            <div class="tab-category-item">
+                <ul class="index_recd">
+                    <li class="index_recd_item"><i class="Hui-iconfont">&#xe653;</i>姓名：黄坤</li>
+                    <li class="index_recd_item"><i class="Hui-iconfont">&#xe70d;</i>职业：JavaWeb开发</li>
+                    <li class="index_recd_item"><i class="Hui-iconfont">&#xe63b;</i>邮箱：<a href="https://mail.qq.com/">2284612137@qq.com</a></li>
+                    <li class="index_recd_item"><i class="Hui-iconfont">&#xe671;</i>定位：湖南 &middot; 常德</li>
+                </ul>
+            </div>
+        </div>
+  	
+  	
+  	<!--热门推荐-->
+  	<div class="bg-fff box-shadow radius mb-20">
+			<div class="tab-category">
+				<a href=""><strong>热门推荐</strong></a>
+			</div>
+			<div class="tab-category-item">
+				<ul class="index_recd">
+                    <table>
+                        <tr th:each="d:${list1}">
+					<li>
+						<a th:href="@{/enterArticleDetail(blogTitle=${d.blogTitle})}">
+                        <span th:text="${d.blogTitle}"></span>
+                        </a>
+						<p class="hits"><i class="Hui-iconfont" title="点击量">&#xe622;</i>
+                            <span th:text="${d.blogReadNumber}"></span>
+                        </p>
+					</li>
+                        </tr>
+                    </table>
+				</ul>
+			</div>
+		</div>
+		
+		<!--点击排行-->
+        <div class="bg-fff box-shadow radius mb-20">
+            <div class="tab-category">
+                <a href=""><strong>点击排行</strong></a>
+            </div>
+            <div class="tab-category-item">
+                <table>
+                    <tr th:each="f:${list2}">
+                <ul class="index_recd clickTop">
+                    <li>
+                        <a th:href="@{/enterArticleDetail(blogTitle=${f.blogTitle})}">
+                            <span th:text="${f.blogTitle}"></span>
+                        </a>
+                        <p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i>
+                        <span th:text="${f.blogReadNumber}"></span>
+                        </p>
+                    </li>
+                </ul>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+		<!--标签-->
+		<div class="bg-fff box-shadow radius mb-20">
+			<div class="tab-category">
+				<a href=""><strong>标签云</strong></a>
+			</div>
+			<div class="tab-category-item">
+				<div class="tags">
+                  <table>
+                      <tr th:each="g:${list3}">
+                    <a href="http://www.h-ui.net/icon/index.shtml"><span th:text="${g.name}"></span></a>
+                    </tr>
+                    </table>
+                </div>
+			</div>
+		</div>
+		<!--图片-->
+		<div class="bg-fff box-shadow radius mb-20">
+			<div class="tab-category">
+				<a href=""><strong>扫我关注</strong></a>
+			</div>
+			<div class="tab-category-item">
+				<img data-original="temp/CSDN.png" class="img-responsive lazyload" alt="响应式图片">
+			</div>
+		</div>
+		
+		<!--友情链接-->
+		<div class="bg-fff box-shadow radius mb-20">
+			<div class="tab-category">
+				<a href=""><strong>隔壁邻居</strong></a>
+			</div>
+			<div class="tab-category-item">
+				<span><i class="Hui-iconfont">&#xe6f1;</i><a href="https://www.baidu.com/" class="btn-link">百度</a></span>
+				<span><i class="Hui-iconfont">&#xe6f1;</i><a href="https://www.taobao.com/" class="btn-link">淘宝</a></span>
+				<span><i class="Hui-iconfont">&#xe6f1;</i><a href="https://www.qq.com/" class="btn-link">腾讯</a></span>
+				<span><i class="Hui-iconfont">&#xe6f1;</i><a href="https://www.imooc.com/" class="btn-link">慕课网</a></span>
+			</div>
+		</div>
+
+        
+		<!--分享-->
+        <div class="bg-fff box-shadow radius mb-20">
+            <div class="tab-category">
+                <a href=""><strong>站点分享</strong></a>
+            </div>
+            <div class="panel-body">
+                <div class="bdsharebuttonbox Hui-share">
+					<a href="#" class="bds_weixin Hui-iconfont" data-cmd="weixin" title="分享到微信">&#xe694;</a>
+					<a href="#" class="bds_qzone Hui-iconfont" data-cmd="qzone" title="分享到QQ空间">&#xe6c8;</a>
+					<a href="#" class="bds_sqq Hui-iconfont" data-cmd="sqq" title="分享到QQ好友">&#xe67b;</a>
+					</div>
+            </div>
+        </div>
+
+
+
+
+  </div>
+  
+</section>
+<footer class="footer mt-20" style="background: grey;">
+	<div class="container-fluid" id="foot" style="color: white;font-size: 15px;font-family: 楷体">
+		<p>Copyright &copy; 2016-2017 www.wfyvv.com
+			<br/>
+			<br/>
+			皖ICP备17002922号
+		</p>
+	</div>
+</footer>
+<script type="text/javascript" src="../../static/plugin/jquery/1.9.1/jquery.min.js" th:src="@{plugin/jquery/1.9.1/jquery.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/layer/3.0/layer.js" th:src="@{plugin/layer/3.0/layer.js}"></script>
+<script type="text/javascript" src="../../static/plugin/h-ui/js/H-ui.min.js" th:src="@{plugin/h-ui/js/H-ui.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/pifu/pifu.js" th:src="@{plugin/pifu/pifu.js}"></script>
+<script type="text/javascript" src="../../static/js/blogBefore/common.js" th:src="@{js/blogBefore/common.js}"></script>
+<script> $(function(){ $(window).on("scroll",backToTopFun); backToTopFun(); }); </script>
+<script type="text/javascript" src="../../static/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js" th:src="@{plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js}"></script>
+
+<script>
+$(function(){
+//幻灯片
+jQuery(".slider_main .slider").slide({mainCell: ".bd ul", titCell: ".hd li", trigger: "mouseover", effect: "leftLoop", autoPlay: true, delayTime: 700, interTime: 2000, pnLoop: true, titOnClassName: "active"})
+//tips
+jQuery(".slideTxtBox").slide({titCell: ".hd ul", mainCell: ".bd ul", autoPage: true, effect: "top", autoPlay: true});
+//标签
+	$(".tags a").each(function(){
+		var x = 9;
+		var y = 0;
+		var rand = parseInt(Math.random() * (x - y + 1) + y);
+		$(this).addClass("tags"+rand)
+	});
+	
+	$("img.lazyload").lazyload({failurelimit : 3});
+});
+
+</script> 
+
+</body>
+</html>

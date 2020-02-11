@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.how2java.springboot.dao.categoryManageMapper">
+    <resultMap id ="UserMap" type="com.how2java.springboot.domain.blog_category">
+        <result column="categoryId" property="categoryId"/>
+        <result column="name" property="name"/>
+        <result column="createTime" property="createTime"/>
+        <result column="rank" property="rank"/>
+    </resultMap>
+    <!--查询全部-->
+    <select id="queryAllCategory" resultType= "com.how2java.springboot.domain.blog_category">
+        select * from blog_category
+    </select>
+    <!--添加标签-->
+    <insert id="addCategory">
+        insert into blog_category (name ,createTime ,rank) values (#{name} ,#{createTime} ,#{rank})
+    </insert>
+    <!--根据博客名字修改使用次数-->
+    <update id="updateCategoryRank">
+        update blog_category set rank=#{rank} where name=#{name}
+    </update>
+    <!--删除标签-->
+    <delete id="deleteCategory" parameterType="java.lang.String">
+        delete from blog_category where name=#{name}
+    </delete>
+
+</mapper>

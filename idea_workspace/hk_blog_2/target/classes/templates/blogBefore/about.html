@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>关于我</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="keywords" content="个人博客,黄坤个人博客,个人博客系统,黄坤博客,黄坤">
+    <meta name="description" content="黄坤博客系统，一个站在java开发之路上的草根程序员个人博客网站。">
+<LINK rel="Bookmark" href="favicon.ico" >
+<LINK rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/staticRes/js/html5shiv.js"></script>
+<script type="text/javascript" src="/staticRes/js/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../static/plugin/h-ui/css/H-ui.min.css" th:href="@{plugin/h-ui/css/H-ui.min.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/plugin/Hui-iconfont/1.0.8/iconfont.min.css" th:href="@{plugin/Hui-iconfont/1.0.8/iconfont.min.css}"/>
+<link rel="stylesheet" type="text/css" href="../../static/css/blogBefore/common.css" th:href="@{css/blogBefore/common.css}" />
+<link rel="stylesheet" type="text/css" href="../../static/plugin/pifu/pifu.css" th:href="@{plugin/pifu/pifu.css}"/>
+    <script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<link href="/staticRes/lib/h-ui/css/H-ui.ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } function showSide(){$('.navbar-nav').toggle();}</script>
+    <style>
+        div.well{
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar-wrapper">
+    <div class="navbar navbar-fixed-top">
+        <div class="container cl">
+            <a class="navbar-logo hidden-xs" href="index.html">
+                <img class="logo" src="../../static/img/blogBefore/logo.png" th:src="@{img/blogBefore/logo.png}" alt="黄坤博客" />
+            </a>
+            <a class="logo navbar-logo-m visible-xs" href="index.html">黄坤博客</a>
+            <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:void(0);" onclick="showSide();">&#xe667;</a>
+            <nav class="nav navbar-nav nav-collapse w_menu" role="navigation">
+                <ul class="cl">
+                    <li class="active"> <a href="index.html" th:href="@{'enterIndex'}" data-hover="首页">首页</a> </li>
+                    <li> <a href="mood.html" th:href="@{'enterMood'}" data-hover="开发历程">开发历程</a> </li>
+                    <li> <a href="board.html" th:href="@{'enterBoard'}" data-hover="留言板">留言板</a> </li>
+                    <li> <a href="about.html" th:href="@{'enterAbout'}" data-hover="关于我">关于我</a> </li>
+                    <li> <a href="liveSharp.html" th:href="@{'enterliveSharp'}" data-hover="生活分享">生活分享</a></li>
+                    <li> <a href="../userLogin.html" th:href="@{/enterUserLogin(exit='test')}" data-hover="退出">退出</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!--导航条-->
+<nav class="breadcrumb">
+    <div class="container"> <i class="Hui-iconfont">&#xe67f;</i>
+        <a href="index.html" th:href="@{'enterIndex'}" class="c-primary">首页</a> <span class="c-gray en">&gt;</span>
+        <span class="c-gray">关于我</span> </div>
+</nav>
+
+<div style="font-family: 楷体;font-size:17px;margin-left: 50px">
+<div  id="1">
+    <div class="well">
+        <Fieldset   style="border:5px   solid   burlywood;padding:10px">
+            <legend   style="padding:10px">关于作者</legend>
+            我是一名普通本科的大三学生，因为比较喜欢java，所以便投身Java大军中了。现在，请跟着我说
+            <b>Java天下第一</b>。
+        </Fieldset>
+    </div>
+</div>
+
+<div  id="2">
+    <div class="well">
+        <Fieldset   style="border:5px   solid   burlywood;padding:10px">
+            <legend   style="padding:10px">软件环境</legend>
+            1) 原型设计: Mockplus <br/>
+            2) 数据库: mysql      <br/>
+            3) IDE: IDEA         <br/>
+            4) 项目管理: maven    <br/>
+            5) 接口测试: postman  <br/>
+            6) 浏览器 : Firefox  <br/>
+            7) 前端设计: IDEA
+        </Fieldset>
+    </div>
+</div>
+<div  id="3">
+    <div class="well">
+        <Fieldset   style="border:5px   solid   burlywood;padding:10px">
+            <legend   style="padding:10px">开发背景</legend>
+                1) 整合大三上学期知识
+                2） 为下一步分布式的学习打好基础
+                3） 为找工作有一个拿的出手的项目
+        </Fieldset>
+    </div>
+</div>
+<div  id="4">
+    <div class="well">
+        <Fieldset   style="border:5px   solid   burlywood;padding:10px">
+            <legend   style="padding:10px">开发经历</legend>
+            2019/12/13 ，这是我在开发之前写下的此次项目的一次说明，我打算做一个springboot+html+css++js(没有学前端框架，
+            看开发之前能不能先学下)+ajax+redis（主体框架）的**个人博客项目**，开发的内容就和网上的查不多，但是具体的内容我还没有确认。为什么要做这么个项目，
+            因为我之前做过的东西很少，仅仅只有一个管理系统，只有简单的增删改查和分页功能，所以此次开发个人博客，希望能将我此项目能将我所学的
+            东西整合起来，然后开始下一阶段的学习，并且为以后找工作能提高自己的价码。
+
+            这个项目对我的成长肯定是有很大用处的，但是这样也意味着困难重重。我打算先把一个登陆，注册，找回密码弄好（其实我感觉也很难，因为要加拦截器，账号
+            密码的格式判断，前端的模板，还有数据库的搭建，验证码，如果有可能的化，我还想加入人脸识别等等）。好了，今天就说到这里把。
+            <br/>
+            <br/>
+            2019/12/14,今天上午考了英语四级，下午开始写代码，我昨天做了简单的前端模板，也磕磕碰碰遇到了一点问题，今天写了一会，遇到了一个始终访问不到我的登陆界面的问题
+            <br/>
+            <br/>
+            2019/12/15，昨天的问题晚上解决了，今天又遇到了很多问题，1。我使用ajax提交始终不能跳转到其他页面，我看到网上说的使用 window.location.href,ajax能到success中曲
+            ，但是这条语句却不能用，始终报404，2。使用过滤器出了一点问题，已经解决了，3.写sql语句的xml也出现问题了，原因不明，始终报错。
+            <br/>
+            <br/>
+            2019/12/16，今天完成了登陆以及注册功能，但还是有一点瑕疵，比如上一步输入信息错误后，前端会显示出错的原因，等到下一次正确输入，上一步的出错信息还是会显示，
+            其实，我完全可以采用js正则式来判断用户的格式，但是我却没有那么做，一来，我上一个项目就是采用的js做的，这次我想采用不同的方式，这里也遇到了重重困难，也问了
+            老师，但是老师说不能这样搞，后来我在网上找，最终还是被我找到了，二来，我在网上看到了一篇文章说，前端做了参数校验，后端还是要在做一此，这样安全一点。
+            <br/>
+            <br/>
+            2019/12/17 今天灵机一动，把昨天说的上一步的出错信息解决了，今天也已经把管理员的注册、登陆搞好了，但是我现在遇到了一个很大的问题，我的前端水平太低，只会简单
+            的html,css,js,可能是因为没有系统学过的原因吧，始终做不出好看的界面，就是在布局上也出现了问题，还有网页扩大，图片会变形等等，今天在这里也停了好久。我最近想
+            打算一边学bootsharp，一边做文档博客样式吧。
+            <br/>
+            <br/>
+            2019/12/19 今天由于没有上课的原因，一整天都在寝室，除开打打英魂之刃，就是写程序，完成的内容还是挺多的，首先上午基本上把数据库和实体类建好了，下午就是把管理员界面
+            基本上搞完了，下午差点把心态搞崩，本来前端水平就不高，但是自己的审美又太高--。--，没办法勉勉强强的搞吧，布局没有学好，总是做不出好看的效果，烦死了。。
+            <br/>
+            <br/>
+            2019/12/20 今天没有搞什么东西，本来想把管理员界面的剩下的几个细节搞完的，一个是提交图片到html页面，一个是textarea文本中的内容居中，但是了好多资料都没有找到，
+            以后实际添加需求的时候再搞吧，今天主要是把关于界面搞了一个，本来是想先搞博客主界面的，但是又碰到一个问题，还是布局不是怎么会，还有
+            在图片中插入文字后不能使其居中，还有上次的图片拉伸会变形，总体来说，今天啥也没完成。
+            <br/>
+            <br/>
+            2019/12/21 原以为今天又回想昨天一样啥也没干，上午确实啥也美感，昨天熬夜要凌晨2点，7点中便被宿管阿姨叫起来了，幸好本周是程序设计，我们程序设计搞完了，这一天可以不去
+            实验室，所以宿管阿姨走了，我又睡了一个回笼觉，大概11点起来，下午对前端的设计还是一头雾水，幸亏逛了以下哔哩哔哩，看到了DIV+CSS布局，看了一会，勉勉强强知道了，前端的
+            布局，简单的将博客主页面设计出来了，打算明天开始后端的开发，搞学习到现在，现在是凌晨2点，看来明天又要到中午起床了。
+            <br/>
+            <br/>
+            2019/12/22 今天有点烦，果然今天又是11点起床的，吃完饭，玩了下就到12点了，下午本来是打算写后端的，然后发现稍微调了一下其前端的格式就乱了，然后越搞越乱，最后，在网上找
+            方法，使用IDEA自带的本地历史，回复到了昨天的版本，然后，就不敢调前端了，开始后端把，搞了一会了，出了一点小bug，但很快就搞定了，快到晚上的时候，一个解决不了的bug出现了，
+            前端使用ajax发不了信息到后端，页面没报404，但是浏览器自动的调试却报404，始终找不到原因，404是访问路径不存在，但是既然我的页面报404，我也检查了很多次代码，
+            也没有提交问题，那应该就没有问题，我认为可能是使用bootsharp引入的jquery.min.js和jquery.js有冲突（我猜的），我一个个的试，也改不回来，明天还要早起写文档了，现在
+            已经是凌晨1点了。
+
+
+
+        </Fieldset>
+    </div>
+</div>
+<div  id="5">
+    <div class="well">
+        <Fieldset   style="border:5px   solid   burlywood;padding:10px">
+            <legend   style="padding:10px">推荐学习</legend>
+            平常我常学习的几个网站
+            <br/>
+            1）how2java:以生动有趣的例子来吸引学者的兴趣
+            <br/>
+            How2J的Java教程， 内容涵盖J2SE、WEB前端、J2EE、框架技术等全面的Java内容。 基于实例代码和视频讲解的学习方式为Java职业生涯打下坚实的基础
+            <br/>
+            链接：<a href="https://how2j.cn/">https://how2j.cn/</a>
+            <br/>
+            2）菜鸟：学的不仅仅是技术，更是梦想
+            <br/>
+            菜鸟教程（www.runoob.com）提供了编程的基础技术教程， 介绍了HTML、CSS、Javascript、Python,Java,Ruby,C,PHP , MySQL等各种编程语言的基础知识
+            <br/>
+            链接：<a href="https://www.runoob.com/">https://www.runoob.com/</a>
+            <br/>
+            3）牛客网：训练思维能力，拿到心仪offer
+            <br/>
+            面向技术·产品·运营技能学习/备考/求职题库平台，包括了互联网企业历年真题题库，教材全解题库，考研题库，期末试题，各类计算机学习语言题库，产品运营等真题题库等，是免费的在线学习平台
+            <br/>
+            链接：<a href="https://www.nowcoder.com/">https://www.nowcoder.com/</a>
+        </Fieldset>
+    </div>
+</div>
+    <div  id="6">
+        <div class="well">
+            <Fieldset   style="border:5px   solid   burlywood;padding:10px">
+                <legend   style="padding:10px">推荐工具</legend>
+                一些实用的工具
+                <br/>
+                1）凡科快图:极简图片编辑工具
+                <br/>
+                免费商用/拖拽操作/海量模板素材
+                <br/>
+                链接：<a href="https://kt.fkw.com/">https://kt.fkw.com/</a>
+                <br/>
+                2）第一PPT：PPT模板下载
+                <br/>
+                PPT背景图片/模板免费下载
+                <br/>
+                链接：<a href="http://www.1ppt.com/">http://www.1ppt.com/</a>
+                <br/>
+                3）二维码生成器：在线二维码生成 - 查询工具
+                <br/>
+                输入内容便可直接生成<br/>
+                链接：<a href="http://tool.ckd.cc/qr/">http://tool.ckd.cc/qr/</a>
+                <br/>
+                4）搜图神器：免费版权图片 一键搜索！
+                <br/>
+                一键搜索多家免版权图库，再也不用担心商用图片侵权了<br/>
+                链接：<a href="https://www.logosc.cn/so/">https://www.logosc.cn/so/</a>
+                <br/>
+                5）艺术字体转换器：艺术字体在线生成
+                <br/>
+                海量艺术字体免费生成<br/>
+                链接：<a href="http://www.akuziti.com/">http://www.akuziti.com/</a>
+                <br/>
+                6）主编微信编辑器：微信公众平台图文排版工具
+                <br/>
+                海量模板，拖拽排版生成<br/>
+                链接：<a href="http://www.zhubian.com/">http://www.zhubian.com/</a>
+                <br/>
+                7）站长素材：分享综合设计素材的平台
+                <br/>
+                各式各样高清图片，前端模板，简历模板，脚本代码，字体特效，PPT下载<br/>
+                链接：<a href="http://sc.chinaz.com/">http://sc.chinaz.com/</a>
+            </Fieldset>
+        </div>
+    </div>
+<div id="8">
+    <div class="well">
+        <Fieldset   style="border:5px   solid   burlywood;padding:10px">
+            <legend   style="padding:10px">联系方式</legend>
+            <p>QQ    : 2284612137</p>
+            <p>Email : 2284612137@qq.com</p>
+            <p>Github: https://github.com/hkdgithub</p>
+            <p>CSDN  : https://blog.csdn.net/m0_45025658</p>
+        </Fieldset>
+    </div>
+</div>
+</div>
+
+<div style="height:100px"></div>
+<footer class="footer mt-20" style="background: grey;">
+    <div class="container-fluid" id="foot" style="color: white;font-size: 15px;font-family: 楷体">
+        <p>Copyright &copy; 2016-2017 www.wfyvv.com
+            <br/>
+            <br/>
+            皖ICP备17002922号
+        </p>
+    </div>
+</footer>
+<script type="text/javascript" src="../../static/plugin/jquery/1.9.1/jquery.min.js" th:src="@{plugin/jquery/1.9.1/jquery.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/layer/3.0/layer.js" th:src="@{plugin/layer/3.0/layer.js}"></script>
+<script type="text/javascript" src="../../static/plugin/h-ui/js/H-ui.min.js" th:src="@{plugin/h-ui/js/H-ui.min.js}"></script>
+<script type="text/javascript" src="../../static/plugin/pifu/pifu.js" th:src="@{plugin/pifu/pifu.js}"></script>
+<script type="text/javascript" src="../../static/js/blogBefore/common.js" th:src="@{js/blogBefore/common.js}"></script>
+<script> $(function(){ $(window).on("scroll",backToTopFun); backToTopFun(); }); </script>
+</body>
+</html>

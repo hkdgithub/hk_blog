@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.how2java.springboot.dao.tagsManageMapper">
+    <resultMap id ="UserMap" type="com.how2java.springboot.domain.blog_tags">
+        <result column="tagId" property="tagId"/>
+        <result column="name" property="name"/>
+        <result column="createTime" property="createTime"/>
+        <result column="rank" property="rank"/>
+    </resultMap>
+    <!--查询全部-->
+    <select id="queryAllTags" resultType= "com.how2java.springboot.domain.blog_tags">
+        select * from blog_tags
+    </select>
+    <!--添加标签-->
+    <insert id="addTags">
+        insert into blog_tags (name ,createTime ,rank) values (#{name} ,#{createTime} ,#{rank})
+    </insert>
+    <!--根据博客名字修改使用次数-->
+    <update id="updateTagsRank">
+        update blog_tags set rank=#{rank} where name=#{name}
+    </update>
+    <!--删除标签-->
+    <delete id="deleteTags" parameterType="java.lang.String">
+        delete from blog_tags where name=#{name}
+    </delete>
+
+</mapper>
